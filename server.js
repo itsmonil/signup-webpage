@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Get a user by their ID
-app.get('/users/:id', (req, res) => {
+app.get('/user/:id', (req, res) => {
     const userId = parseInt(req.params.id, 10);
 
     fs.readFile(usersFile, 'utf8', (err, data) => {
@@ -32,7 +32,7 @@ app.get('/users/:id', (req, res) => {
 });
 
 // Handle form submissions
-app.post('/post', (req, res) => {
+app.post('/regsiter', (req, res) => {
     const { name, email, password } = req.body;
 
     // Check if any field is empty
@@ -89,7 +89,7 @@ app.post('/post', (req, res) => {
 });
 
 // Get all users (for testing)
-app.get('/users', (req, res) => {
+app.get('/user', (req, res) => {
     fs.readFile(usersFile, 'utf8', (err, data) => {
         if (err) {
             return res.status(500).json({ message: 'Data file not readable' });
