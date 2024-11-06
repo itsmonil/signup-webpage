@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 2200px;
+  padding: 20px;
+}
+
+.left,
+.right {
+  width: 50%;
+}
+
+.right {
+  width: 60%;
+}
+
+.signup-container {
+  margin-top: 80px;
+  margin-left: 100px;
+  width: 60%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h1 {
+  margin-bottom: 50px;
+}
+
+.checkbox-container {
+  display: flex;
+  gap: 20px;
+  justify-content: left;
+  margin-bottom: 20px;
+}
+
+
+input[type="checkbox"] {
+  margin-bottom: 20px;
+}
+
+form label {
+  font-weight: 100;
+  font-size: 18px;
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 40px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  background-color: #3c763d;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px 0;
+}
+
+.text {
+  font-size: 1em;
+  margin: 0 10px;
+}
+
+.google-button {
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  width: 330px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.google-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 15px;
+}
+
+.apple-button {
+  border: 1px solid #ccc;
+  margin-left: 30px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  width: 330px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.apple-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 15px;
+}
+
+.login-icon {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+h2 {
+  font-size: 15px;
+  font-weight: lighter;
+  margin-left: -10px;
+}
+
+.oauth {
+  margin-top: 10px;
+  background: none;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  width: 48%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+#statusMessage {
+  color: red;
+  margin-top: 10px;
+}
+
+.signup-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .signup-container {
+    margin-top: 20px;
+    margin-left: 0;
+    width: 90%;
+  }
+
+  .google-button,
+  .apple-button {
+    width: 45%;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 25px;
+  }
+
+  .google-button span,
+  .apple-button span {
+    font-size: 15px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .google-icon,
+  .apple-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 0;
+  }
+
+  .google-button span,
+  .apple-button span {
+    display: none;
+  }
+
+  .login-icon {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .separator {
+    margin: 10px 0;
+  }
+
+  .signup-image {
+    display: none;
+  }
+}

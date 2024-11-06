@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="left">
+      <div class="signup-container">
+        <h1>Get Started Now</h1>
+        <form id="signupForm" action="/post" method="post">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+          <div class="checkbox-container">
+            <input type="checkbox" id="terms" name="terms" required>
+            <h2>I agree to the <a href="#">terms & policy</a>
+              <h2>
+          </div>
+          <button type="submit">Signup</button>
+        </form>
+        <div class="container">
+          <div class="separator"></div>
+          <div class="text">Or</div>
+          <div class="separator"></div>
+        </div>
+        <div class="login-icon">
+          <button class="google-button">
+            <img class="google-icon" src="google.png" alt="Google Logo">
+            <span style="font-size: 15px;">Sign in with Google</span>
+                   </button>
+          <button class="apple-button">
+            <img class="apple-icon" src="apple-logo.png" alt="apple Logo">
+            <span style="font-size: 15px;">Sign in with Apple</span>
+                    </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <img src="leaf.jpg" alt="Signup Image" class="signup-image">
+    </div>
+  </div>
+
+  <script src="server.js"></script>
+  <script>
+    const form = document.getElementById('signupForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        const response = await fetch('/post', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, password })
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+          alert(data.message);
+          form.reset();
+        } else {
+          alert(data.message);
+        }
+      } catch (error) {
+        alert('Error submitting form');
+      }
+    });
+  </script>
+</body>
+
+</html>
