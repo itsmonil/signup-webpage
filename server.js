@@ -32,7 +32,7 @@ app.get('/user/:id', (req, res) => {
 });
 
 // Handle form submissions
-app.post('/regsiter', (req, res) => {
+app.post('/post', (req, res) => {
     const { name, email, password } = req.body;
 
     // Check if any field is empty
